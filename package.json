@@ -12,6 +12,10 @@
     "grunt-contrib-uglify": "~0.5.0",
     "grunt-processhtml": "~0.3.3",
     "grunt-bowercopy": "~1.2.0",
-    "grunt-contrib-clean": "~0.6.0"
+    "grunt-contrib-clean": "~0.6.0",
+    "unit.js": "~1.1.2",
+    "grunt-mocha": "~0.4.11",
+    "mocha": "~2.1.0",
+    "grunt-mocha-test": "~0.12.4"
   }
 }

@@ -88,7 +88,18 @@ module.exports = function(grunt) {
         }
       }
     },
-    clean: ['dist']
+    clean: ['dist'],
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec',
+          captureFile: 'results.txt', // Optionally capture the reporter output to a file
+          quiet: false, // Optionally suppress output to standard out (defaults to false)
+          clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false)
+        },
+        src: ['test/**/*.js']
+      }
+    }
   });
 
   // These plugins provide necessary tasks.
@@ -100,8 +111,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-bowercopy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-mocha-test');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', /*'qunit', */'clean', 'concat', 'uglify', 'bowercopy', 'processhtml']);
+  grunt.registerTask('default', ['jshint', 'mochaTest', /*'qunit', */'clean', 'concat', 'uglify', 'bowercopy', 'processhtml']);
 
 };
