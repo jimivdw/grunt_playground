@@ -41,7 +41,8 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         browser: true,
-        globals: {}
+        globals: {},
+        ignores: ['test/**/*.js']
       },
       gruntfile: {
         src: 'Gruntfile.js'
@@ -114,6 +115,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'mochaTest', /*'qunit', */'clean', 'concat', 'uglify', 'bowercopy', 'processhtml']);
+  grunt.registerTask('default', ['clean', 'jshint', 'mochaTest', /*'qunit', */'concat', 'uglify', 'bowercopy', 'processhtml']);
 
 };

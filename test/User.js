@@ -9,4 +9,4 @@ User.prototype.getFullName = function() {
 
 module.exports = {
     User: User
-}
+};
