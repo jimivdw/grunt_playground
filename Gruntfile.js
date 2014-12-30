@@ -73,6 +73,8 @@ module.exports = function(grunt) {
         },
         files: {
           'angular/angular.min.js': 'angular/angular.min.js',
+          'angular-bootstrap/ui-bootstrap-tpls.min.js': 'angular-bootstrap/ui-bootstrap-tpls.min.js',
+          'bootstrap/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
         }
       }
     },
@@ -86,6 +88,7 @@ module.exports = function(grunt) {
         }
       }
     },
+    clean: ['dist']
   });
 
   // These plugins provide necessary tasks.
@@ -96,8 +99,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-bowercopy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', /*'qunit', */'concat', 'uglify', 'bowercopy', 'processhtml']);
+  grunt.registerTask('default', ['jshint', /*'qunit', */'clean', 'concat', 'uglify', 'bowercopy', 'processhtml']);
 
 };

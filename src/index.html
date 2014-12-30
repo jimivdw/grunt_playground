@@ -5,25 +5,35 @@
     <title>Angular Demo</title>
     <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> -->
+
+    <!-- build:css vendor/bootstrap/bootstrap.min.css -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- /build -->
+    
     <!-- build:js vendor/angular/angular.min.js -->
     <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
     <!-- /build -->
+
+    <!-- build:js vendor/angular-bootstrap/ui-bootstrap-tpls.min.js -->
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!-- /build -->
+
     <!-- build:js app.min.js -->
     <script type="text/javascript" src="service/service.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <!-- /build -->
 
-    <style>
-        body {     
-            padding-top: 80px;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container" ng-app="myApp">
-        <div ng-controller="MainCtrl">
-            {{message}}
+        <div ng-controller="MainCtrl as main">
+            <div>
+                {{main.message}}
+            </div>
+            <div>
+                <button class="btn btn-primary" ng-click="main.change()">test</button>
+            </div>
         </div>
     </div>
 </body>

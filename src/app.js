@@ -1,10 +1,14 @@
 (function(angular) {
-    var app = angular.module('myApp', ['myAppService']);
+    var app = angular.module('myApp', ['myAppService', 'ui.bootstrap']);
     app.controller('MainCtrl', ['$scope', 'LogService', function($scope, logService) {
-        $scope.message = 'Hello, Grunt with Angular!';
-        logService.log('info', 'LogService works!');
-        logService.log('error', 'LogService works!');
-        logService.log('warn', 'LogService works!');
+        var vm = this;
+        vm.message = 'Hello, Grunt with Angular!';
+        logService.log('info', vm.message);
+        logService.log('error', vm.message);
+        logService.log('warn', vm.message);
+        vm.change = function() {
+            vm.message = 'Message changed via button click!';
+        };
 
     }]);
 })(window.angular);
