@@ -9,19 +9,19 @@ describe('LogService', function() {
     describe('#log', function() {
         it('should log message based on the type passed in', function() {
 
-            resetLog(log);
+            clearLog(log);
             LogService.log('info', 'info message');
             assert.equal(log.info.logs, 'info message');
             assert.equal(log.error.logs, '');
             assert.equal(log.warn.logs, '');
 
-            resetLog(log);
+            clearLog(log);
             LogService.log('error', 'error message');
             assert.equal(log.error.logs, 'error message');
             assert.equal(log.info.logs, '');
             assert.equal(log.warn.logs, '');
 
-            resetLog(log);
+            clearLog(log);
             LogService.log('warn', 'warn message');
             assert.equal(log.warn.logs, 'warn message');
             assert.equal(log.info.logs, '');
@@ -32,7 +32,7 @@ describe('LogService', function() {
 
 });
 
-function resetLog(log) {
+function clearLog(log) {
     for (_log in log) {
         log[_log]['logs'] = [];
     }

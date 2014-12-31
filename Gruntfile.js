@@ -121,6 +121,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'jshint', 'karma', /*'mochaTest',*/ /*'qunit', */'concat', 'uglify', 'bowercopy', 'processhtml']);
+  grunt.registerTask('default', ['clean', 'jshint', 'karma', 
+    /*'mochaTest',*/ /*'qunit', */'concat', 'uglify', 'bowercopy', 'processhtml']);
 
 };
