@@ -20,6 +20,7 @@
 
     <!-- build:js app.min.js -->
     <script type="text/javascript" src="service/service.js"></script>
+    <script type="text/javascript" src="service/weatherService.js"></script>
     <script type="text/javascript" src="controller/mainCtrl.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <!-- /build -->
@@ -34,6 +35,9 @@
             </div>
             <div>
                 <button class="btn btn-primary" ng-click="main.change()">test</button>
+            </div>
+            <div>
+                {{main.weather}}
             </div>
         </div>
     </div>

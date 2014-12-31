@@ -1,9 +1,9 @@
 describe('MainCtrl', function() {
-    var scope, ctrl, LogService;
+    var scope, ctrl, LogService, $httpBackend;
 
     beforeEach(module('mainCtrl'));
 
-    beforeEach(inject(function($controller, $rootScope) {
+    beforeEach(inject(function($controller, $rootScope, _$httpBackend_) {
         scope = $rootScope.$new();
         ctrl = $controller('MainCtrl', {
             '$scope': scope,
@@ -16,6 +16,11 @@ describe('MainCtrl', function() {
                 }
             }
         });
+        $httpBackend = _$httpBackend_;
+        $httpBackend.whenGET("http://api.openweathermap.org/data/2.5/weather?q=London,uk").respond([{
+            id: 1,
+            name: "banana"
+        }]);
     }));
 
     it('should initialize with default message', function() {
@@ -36,6 +41,16 @@ describe('MainCtrl', function() {
         assert.deepEqual(ctrl.data, {
             'data': 'test...'
         });
+    });
+
+    /*test $http*/
+    it('should get weather data from WeatherService', function() {
+        scope.$digest();
+        $httpBackend.flush();
+        assert.deepEqual(ctrl.weather, [{
+            id: 1,
+            name: "banana"
+        }]);
     });
 
 });
