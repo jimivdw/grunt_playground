@@ -6,7 +6,7 @@
                     $log[type](message);
                 },
                 fn: function() {
-                    console.log('test');
+                    $log.info('test');
                 }
             };
         }]);
