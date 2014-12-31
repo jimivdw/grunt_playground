@@ -100,6 +100,11 @@ module.exports = function(grunt) {
         },
         src: ['test/**/*.js']
       }
+    },
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
+      }
     }
   });
 
@@ -112,9 +117,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-bowercopy');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-mocha-test');
+  // grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks('grunt-karma');
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'jshint', 'mochaTest', /*'qunit', */'concat', 'uglify', 'bowercopy', 'processhtml']);
+  grunt.registerTask('default', ['clean', 'jshint', 'karma', /*'mochaTest',*/ /*'qunit', */'concat', 'uglify', 'bowercopy', 'processhtml']);
 
 };
