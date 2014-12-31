@@ -6,7 +6,7 @@ describe('LogService', function() {
         log = _$log_;
     }));
 
-    describe('log', function() {
+    describe('#log', function() {
         it('should log message based on the type passed in', function() {
 
             resetLog(log);
