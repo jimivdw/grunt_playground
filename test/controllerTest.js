@@ -17,7 +17,8 @@ describe('MainCtrl', function() {
             }
         });
         $httpBackend = _$httpBackend_;
-        $httpBackend.whenGET("http://api.openweathermap.org/data/2.5/weather?q=London,uk").respond([{
+        // for any url...
+        $httpBackend.whenGET(/.*/).respond([{
             id: 1,
             name: "banana"
         }]);
