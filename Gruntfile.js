@@ -131,7 +131,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-serve');
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'jshint', 'karma', 
+  grunt.registerTask('default', ['clean', 'jshint', 'karma:unit', 
     /*'mochaTest',*/ /*'qunit', */'concat', 'uglify', 'bowercopy', 'processhtml']);
 
 };
