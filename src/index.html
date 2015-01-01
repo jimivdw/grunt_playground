@@ -30,14 +30,14 @@
 <body>
     <div class="container" ng-app="myApp">
         <div ng-controller="MainCtrl as main">
-            <div id="message">
-                {{main.message}}
+            <div>
+                <p id="message">{{main.message}}</p>
             </div>
             <div>
                 <button class="btn btn-primary" ng-click="main.change()">test</button>
             </div>
             <div>
-                {{main.weather}}
+                <span id="weather">{{main.weather}}</span>
             </div>
         </div>
     </div>
