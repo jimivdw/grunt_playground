@@ -104,7 +104,16 @@ module.exports = function(grunt) {
     karma: {
       unit: {
         configFile: 'karma.conf.js'
-      }
+      },
+      e2e: {
+        configFile: 'karma-e2e.conf.js'
+      },
+    },
+    serve: {
+        options: {
+            port: 9000,
+            base: 'src/'
+        }
     }
   });
 
@@ -119,6 +128,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   // grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-serve');
 
   // Default task.
   grunt.registerTask('default', ['clean', 'jshint', 'karma', 

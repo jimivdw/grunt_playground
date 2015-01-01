@@ -25,6 +25,11 @@
     "karma": "~0.12.30",
     "angular-mocks": "~1.3.8",
     "grunt-karma": "~0.9.0",
-    "karma-coverage": "~0.2.7"
+    "karma-coverage": "~0.2.7",
+    "grunt-serve": "~0.1.6",
+    "angular-scenario": "~1.3.8",
+    "angular-route": "~1.3.8",
+    "karma-ng-scenario": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.7"
   }
 }
