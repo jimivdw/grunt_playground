@@ -75,7 +75,8 @@ module.exports = function(grunt) {
         files: {
           'angular/angular.min.js': 'angular/angular.min.js',
           'angular-bootstrap/ui-bootstrap-tpls.min.js': 'angular-bootstrap/ui-bootstrap-tpls.min.js',
-          'bootstrap/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
+          'bootstrap/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css',
+          'angular-ui-router/angular-ui-router.min.js': 'angular-ui-router/release/angular-ui-router.min.js',
         }
       }
     },
