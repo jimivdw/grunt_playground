@@ -5,7 +5,7 @@ describe('index page', function() {
     });
 
     it('path works', function() {
-        expect(browser().location().path()).toBe('');
+        expect(browser().location().path()).toBe('/register');
     });
 
     it('click works', function() {

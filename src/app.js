@@ -1,32 +1,21 @@
 (function(angular) {
     var app = angular.module('myApp', ['ui.bootstrap', 'ui.router', 'mainCtrl']); // jshint ignore: line
-    /*myApp.config(function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise("/state1");
+    app.config(function($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise("/register");
         //
         // Now set up the states
         $stateProvider
-            .state('state1', {
-                url: "/state1",
-                templateUrl: "partials/state1.html"
+            .state('register', {
+                url: "/register",
+                template: "<span style=\"color:red;\">free registration!</span>"
             })
-            .state('state1.list', {
-                url: "/list",
-                templateUrl: "partials/state1.list.html",
+            .state('login', {
+                url: "/login",
+                template: "<ul ng-repeat=\"item in items\"><span style=\"color:brown;\">{{item}}</span></ul>",
                 controller: function($scope) {
                     $scope.items = ["A", "List", "Of", "Items"];
                 }
-            })
-            .state('state2', {
-                url: "/state2",
-                templateUrl: "partials/state2.html"
-            })
-            .state('state2.list', {
-                url: "/list",
-                templateUrl: "partials/state2.list.html",
-                controller: function($scope) {
-                    $scope.things = ["A", "Set", "Of", "Things"];
-                }
             });
-    });*/
+    });
 
 })(window.angular);
