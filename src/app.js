@@ -12,7 +12,7 @@
             })
             .state('login', {
                 url: "/login",
-                template: "<ul ng-repeat=\"item in items\"><span style=\"color:brown;\">{{item}}</span></ul>",
+                template: "<ul ng-repeat=\"item in items track by $index\"><span style=\"color:brown;\">{{$index}}: {{item}}</span></ul>",
                 controller: ['$scope', function($scope) {
                     $scope.items = ["A", "List", "Of", "Items"];
                 }]
