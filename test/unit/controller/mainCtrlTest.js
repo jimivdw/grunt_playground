@@ -1,7 +1,7 @@
 describe('MainCtrl', function() {
     var scope, ctrl, LogService, $httpBackend;
 
-    beforeEach(module('mainCtrl'));
+    beforeEach(module('ControllerModule'));
 
     beforeEach(inject(function($controller, $rootScope, _$httpBackend_) {
         scope = $rootScope.$new();

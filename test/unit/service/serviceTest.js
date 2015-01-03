@@ -1,6 +1,6 @@
 describe('LogService', function() {
     var LogService, log;
-    beforeEach(module('myAppService'));
+    beforeEach(module('ServiceModule'));
     beforeEach(inject(function(_LogService_, _$log_) {
         LogService = _LogService_;
         log = _$log_;

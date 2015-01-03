@@ -1,6 +1,7 @@
 (function(angular) {
-    var app = angular.module('myApp', ['ui.bootstrap', 'ui.router', 'mainCtrl']); // jshint ignore: line
-    app.config(function($stateProvider, $urlRouterProvider) {
+    console.log('init MyAppModule'); // jshint ignore:line
+    var app = angular.module('MyAppModule', ['ui.bootstrap', 'ui.router', 'ControllerModule']); 
+    app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/register");
         //
         // Now set up the states
@@ -12,10 +13,10 @@
             .state('login', {
                 url: "/login",
                 template: "<ul ng-repeat=\"item in items\"><span style=\"color:brown;\">{{item}}</span></ul>",
-                controller: function($scope) {
+                controller: ['$scope', function($scope) {
                     $scope.items = ["A", "List", "Of", "Items"];
-                }
+                }]
             });
-    });
+    }]);
 
 })(window.angular);

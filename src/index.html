@@ -24,7 +24,9 @@
 
     <!-- build:js app.min.js -->
     <script type="text/javascript" src="service/service.js"></script>
+    <script type="text/javascript" src="service/logService.js"></script>
     <script type="text/javascript" src="service/weatherService.js"></script>
+    <script type="text/javascript" src="controller/controller.js"></script>
     <script type="text/javascript" src="controller/mainCtrl.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <!-- /build -->
@@ -32,7 +34,7 @@
 </head>
 
 <body>
-    <div class="container" ng-app="myApp">
+    <div class="container" ng-app="MyAppModule">
         <div ng-controller="MainCtrl as main">
             <div>
                 <p id="message">{{main.message}}</p>

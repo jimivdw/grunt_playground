@@ -1,5 +1,6 @@
 (function(angular) {
-    var app = angular.module('mainCtrl', ['myAppService', 'WeatherServiceModule']);
+    console.log('init MainCtrl'); // jshint ignore:line
+    var app = angular.module('ControllerModule');
     app.controller('MainCtrl', ['$scope', 'LogService', 'WeatherService', function($scope, LogService, WeatherService) {
         var vm = this,
             count = 0;
@@ -21,4 +22,5 @@
 
 
     }]);
+
 })(window.angular);
