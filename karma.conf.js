@@ -19,7 +19,10 @@ module.exports = function(config) {
         'node_modules/angular-mocks/angular-mocks.js',
         // specify the order of module loading
         './src/service/service.js',
-        './src/**/*.js',
+        './src/service/**/*Service.js',
+        './src/controller/controller.js',
+        './src/controller/**/*Ctrl.js',
+        './src/app.js',
         './test/unit/**/*.js'
     ],
 
