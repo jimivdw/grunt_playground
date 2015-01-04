@@ -81,6 +81,14 @@ module.exports = function(grunt) {
         }
       }
     },
+    copy: {
+      main: {
+        expand: true,
+        cwd: "src/partial/",
+        src: '**',
+        dest: 'dist/partial/',
+      },
+    },
     processhtml: {
       options: {
 
@@ -131,9 +139,10 @@ module.exports = function(grunt) {
   // grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-serve');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task.
   grunt.registerTask('default', ['clean', 'jshint', 'karma:unit', 
-    /*'mochaTest',*/ /*'qunit', */'concat', 'uglify', 'bowercopy', 'processhtml']);
+    /*'mochaTest',*/ /*'qunit', */'concat', 'uglify', 'copy', 'bowercopy', 'processhtml']);
 
 };

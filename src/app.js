@@ -8,12 +8,12 @@
         $stateProvider
             .state('register', {
                 url: "/register",
-                template: "username: <input type=\"text\"/>password: <input type=\"text\"/>repeat password: <input type=\"text\"/><button>Register</button>",
+                templateUrl: "partial/user-service/register.html",
             })
             .state('login', {
                 url: "/login",
                 // template: "<ul ng-repeat=\"item in items track by $index\"><span style=\"color:brown;\">{{$index}}: {{item}}</span></ul>",
-                template: "username: <input type=\"text\"/>password: <input type=\"text\"/><button>Login</button>",
+                templateUrl: "partial/user-service/login.html",
                 controller: ['$scope', function($scope) {
                     $scope.items = ["A", "List", "Of", "Items"];
                 }]
