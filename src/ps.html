@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <canvas id="myCanvas" width="600" height="600" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.</canvas>
+
+    <script>
+    var c;
+
+    function draw() {
+        c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        for (var i = 0; i < 30; i++) {
+            for (var j = 0; j < 30; j++) {
+                ctx.lineWidth = "1";
+                ctx.fillStyle = '#' + (Math.floor(Math.random() * 3971) % 10) + (Math.floor(Math.random() * 3971) % 10) + (Math.floor(Math.random() * 3971) % 10) + (Math.floor(Math.random() * 3971) % 10) + (Math.floor(Math.random() * 3971) % 10) + (Math.floor(Math.random() * 3971) % 10);
+                console.log(ctx.fillStyle);
+                ctx.fillRect(20 * i, 20 * j, 18, 18);
+            }
+        }
+        ctx.stroke();
+    }
+
+    draw();
+
+    c.addEventListener("mousemove", doMouseMove, false);
+
+    function doMouseMove(e) {
+        console.log(e);
+        draw();
+    }
+    </script>
+
+</body>
+
+</html>
