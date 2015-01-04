@@ -53,5 +53,4 @@ describe('MainCtrl', function() {
             name: "cloudy"
         }]);
     });
-
 });

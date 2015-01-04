@@ -19,4 +19,12 @@ describe('index page', function() {
         expect(element('#weather').html()).toContain('London');
     });
 
+
+    it('should change url when click register/login', function() {
+        element('#login').click();
+        expect(browser().location().path()).toBe('/login');
+        element('#register').click();
+        expect(browser().location().path()).toBe('/register');
+    });
+
 });
