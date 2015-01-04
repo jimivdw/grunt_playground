@@ -47,6 +47,7 @@ describe('MainCtrl', function() {
     /*test $http*/
     it('should get weather data from WeatherService', function() {
         scope.$digest();
+        ctrl.loadWeather();
         $httpBackend.flush();
         assert.deepEqual(ctrl.weather, [{
             id: 1,

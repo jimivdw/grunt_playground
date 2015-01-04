@@ -16,6 +16,7 @@ describe('index page', function() {
     });
 
     it('rest service works', function() {
+        element('#loadWeather').click();
         expect(element('#weather').html()).toContain('London');
     });
 
