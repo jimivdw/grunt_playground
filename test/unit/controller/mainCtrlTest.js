@@ -20,7 +20,7 @@ describe('MainCtrl', function() {
         // for any url...
         $httpBackend.whenGET(/.*/).respond([{
             id: 1,
-            name: "banana"
+            name: "cloudy"
         }]);
     }));
 
@@ -50,7 +50,7 @@ describe('MainCtrl', function() {
         $httpBackend.flush();
         assert.deepEqual(ctrl.weather, [{
             id: 1,
-            name: "banana"
+            name: "cloudy"
         }]);
     });
 
