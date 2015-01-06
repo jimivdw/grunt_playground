@@ -8,14 +8,14 @@
         $stateProvider
             .state('register', {
                 url: "/register",
-                templateUrl: "partial/user-service/register.html",
+                templateUrl: "partial/auth/register.html",
             })
             .state('login', {
                 url: "/login",
                 // template: "<ul ng-repeat=\"item in items track by $index\"><span style=\"color:brown;\">{{$index}}: {{item}}</span></ul>",
-                templateUrl: "partial/user-service/login.html",
-                controller: ['$scope', function($scope) {
-                    $scope.items = ["A", "List", "Of", "Items"];
+                templateUrl: "partial/auth/login.html",
+                controller: ['$scope', function($scope) {  // jshint ignore: line
+                    // $scope.items = ["A", "List", "Of", "Items"];
                 }]
             });
     }]);
