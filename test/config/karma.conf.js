@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Thu Jan 01 2015 09:59:04 GMT-0500 (EST)
+// Generated on Wed Dec 31 2014 09:56:26 GMT-0500 (EST)
 
 module.exports = function(config) {
   config.set({
@@ -10,26 +10,20 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['ng-scenario'],
+    frameworks: ['mocha', 'chai'],
 
-
-    proxies : {
-       '/': 'http://localhost:9000/'
-    },
-
-    // URL root prevent conflicts with the site root
-    urlRoot : '',
 
     // list of files / patterns to load in the browser
     files: [
-        // 'bower_components/angular/angular.js',
-        // 'node_modules/angular-mocks/angular-mocks.js',
-        // 'node_modules/angular-route/angular-route.js',
-        /*'node_modules/angular-scenario/jstd-scenario-adapter-config.js',
-        'node_modules/angular-scenario/jstd-scenario-adapter.js',
-        'node_modules/angular-scenario/angular-scenario.js',*/
-        // './src/**/*.js',
-        './test/e2e/**/*.js'
+        '../../bower_components/angular/angular.js',
+        '../../node_modules/angular-mocks/angular-mocks.js',
+        // specify the order of module loading
+        '../../src/service/service.js',
+        '../../src/service/**/*Service.js',
+        '../../src/controller/controller.js',
+        '../../src/controller/**/*Ctrl.js',
+        '../../src/app.js',
+        '../../test/unit/**/*.js'
     ],
 
 
@@ -41,17 +35,22 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'src/**/*.js': ['coverage']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
 
+    coverageReporter: {
+      type: 'html',
+      dir: 'coverage/'
+    },
 
     // web server port
-    port: 9000,
+    port: 9876,
 
 
     // enable / disable colors in the output (reporters and logs)
@@ -69,19 +68,11 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
-
-    plugins: [
-        // 'karma-chai',
-        // 'karma-phantomjs-launcher',
-        'karma-chrome-launcher',
-        'karma-ng-scenario',
-    ],
-
+    singleRun: true
   });
 };

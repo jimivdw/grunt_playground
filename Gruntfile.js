@@ -113,10 +113,10 @@ module.exports = function(grunt) {
     },
     karma: {
       unit: {
-        configFile: 'karma.conf.js'
+        configFile: 'test/config/karma.conf.js'
       },
       e2e: {
-        configFile: 'karma-e2e.conf.js'
+        configFile: 'test/config/karma-e2e.conf.js'
       },
     },
     serve: {
