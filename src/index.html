@@ -55,15 +55,22 @@
             </div>
             <div style="border:1px dotted brown;margin-top:10px;">
                 <div class="header">
-                    <span>Demo Weather info from api using $http</span>
+                    <span>Demo weather info from api using $http</span>
                 </div>
                 <button id="loadWeather" class="btn btn-sm btn-danger" ng-click="main.loadWeather()">Load Weather Data</button><br>
                 <span id="weather">{{main.weather}}</span>
             </div>
             
-        </div>
+            <div style="border:1px dotted brown;margin-top:10px;">
+                <div class="header">
+                    <span>Demo directive</span>
+                </div>
+                <button btn-click count="main.count" b-type="main.btype" class="btn {{main.btype}}"> {{main.count}}: directive</button>
+            </div>
 
-        <div ng-controller="AuthCtrl as auth">
+        </div>            
+
+        <div ng-controller="AuthCtrl as auth"
             <div style="border:1px dashed green;margin-top:10px;">
                 <div class="header">
                     <span>Demo ui-router</span>

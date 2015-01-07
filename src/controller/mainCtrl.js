@@ -5,6 +5,8 @@
         function($scope, LogService, WeatherService, TaskService) {
             var vm = this,
                 count = 0;
+            vm.count = 0;
+            vm.btype = "btn-primary";
             vm.message = 'Hello, Grunt with Angular!';
             LogService.log('info', vm.message);
             LogService.log('error', vm.message);
@@ -16,12 +18,12 @@
 
             vm.loadWeather = function() {
                 WeatherService.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk')
-                .success(function(data, status, headers, config) { // jshint ignore:line
-                    vm.weather = data;
-                })
-                .error(function(data, status, headers, config) { // jshint ignore:line
-                    // console.log(data);
-                });
+                    .success(function(data, status, headers, config) { // jshint ignore:line
+                        vm.weather = data;
+                    })
+                    .error(function(data, status, headers, config) { // jshint ignore:line
+                        // console.log(data);
+                    });
             };
 
             LogService.log('info', TaskService.getTaskById('001'));
