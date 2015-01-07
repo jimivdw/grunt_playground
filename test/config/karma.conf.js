@@ -22,6 +22,8 @@ module.exports = function(config) {
         '../../src/service/**/*Service.js',
         '../../src/controller/controller.js',
         '../../src/controller/**/*Ctrl.js',
+        '../../src/directive/directive.js',
+        '../../src/directive/**/*.js',
         '../../src/app.js',
         '../../test/unit/**/*.js'
     ],
