@@ -30,6 +30,7 @@
     <script type="text/javascript" src="controller/controller.js"></script>
     <script type="text/javascript" src="controller/mainCtrl.js"></script>
     <script type="text/javascript" src="controller/authCtrl.js"></script>
+    <script type="text/javascript" src="controller/infoCtrl.js"></script>
     <script type="text/javascript" src="directive/directive.js"></script>
     <script type="text/javascript" src="directive/btnClick.js"></script>
     <script type="text/javascript" src="app.js"></script>
@@ -48,14 +49,14 @@
 <body>
     <div class="container" ng-app="MyAppModule">
         <div ng-controller="MainCtrl as main">
-            <div style="border:1px solid blue;margin-top:10px;">
+            <div style="border:1px solid blue;margin-top:30px;">
                 <div class="header">
                     <span>Demo angular data binding & event</span>
                 </div>
                 <span id="message">{{main.message}}</span>
                 <button class="btn btn-sm btn-warning" ng-click="main.change()">submit</button>
             </div>
-            <div style="border:1px dotted brown;margin-top:10px;">
+            <div style="border:1px dotted brown;margin-top:30px;">
                 <div class="header">
                     <span>Demo weather info from api using $http</span>
                 </div>
@@ -63,7 +64,7 @@
                 <span id="weather">{{main.weather}}</span>
             </div>
             
-            <div style="border:1px dotted brown;margin-top:10px;">
+            <div style="border:1px dotted brown;margin-top:30px;">
                 <div class="header">
                     <span>Demo directive</span>
                 </div>
@@ -72,8 +73,8 @@
 
         </div>            
 
-        <div ng-controller="AuthCtrl as auth"
-            <div style="border:1px dashed green;margin-top:10px;">
+        <div ng-controller="AuthCtrl as auth">
+            <div style="border:1px dashed green;margin-top:30px;">
                 <div class="header">
                     <span>Demo ui-router</span>
                 </div>
@@ -88,6 +89,18 @@
                   <div class="col-md-10">
                       <div ui-view></div>
                   </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-controller="InfoCtrl as info">
+            <div style="border:1px dashed green;margin-top:30px;">
+                <div class="header">
+                    <span>Demo communication between controllers</span>
+                </div>
+
+                <div>
+                    {{info.message}}
                 </div>
             </div>
         </div>
