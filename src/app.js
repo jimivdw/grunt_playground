@@ -1,6 +1,6 @@
 (function(angular) {
     console.log('init MyAppModule'); // jshint ignore:line
-    var app = angular.module('MyAppModule', ['ui.bootstrap', 'ui.router', 'ControllerModule', 'DirectiveModule']);
+    var app = angular.module('MyAppModule', ['ui.bootstrap', 'ui.router', 'DirectiveModule', 'ControllerModule']);
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/register");
         //

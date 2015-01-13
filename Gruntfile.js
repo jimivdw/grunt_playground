@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['src/service/service.js', 'src/controller/controller.js', 
+        src: ['src/service/service.js', 'src/controller/controller.js', 'src/directive/directive.js',
               'src/**/*.js'],
         dest: 'dist/<%= pkg.name %>.js'
       }
@@ -75,6 +75,7 @@ module.exports = function(grunt) {
         },
         files: {
           'angular/angular.min.js': 'angular/angular.min.js',
+          'angular/angular.min.js.map': 'angular/angular.min.js.map',
           'angular-bootstrap/ui-bootstrap-tpls.min.js': 'angular-bootstrap/ui-bootstrap-tpls.min.js',
           'bootstrap/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css',
           'angular-ui-router/angular-ui-router.min.js': 'angular-ui-router/release/angular-ui-router.min.js',
