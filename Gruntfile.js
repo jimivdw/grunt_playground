@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['src/compiled/**/*.js', 'src/service/service.js', 'src/controller/controller.js', 'src/directive/directive.js',
+        src: ['src/compiled/test.js', 'src/compiled/demo/demo.js', 'src/service/service.js', 'src/controller/controller.js', 'src/directive/directive.js',
               'src/**/*.js'],
         dest: 'dist/<%= pkg.name %>.js'
       }
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    clean: ['dist'],
+    clean: ['dist', 'src/compiled'],
     mochaTest: {
       test: {
         options: {
@@ -127,12 +127,12 @@ module.exports = function(grunt) {
         }
     },
     coffee: {
-      compile: {
+      /*compile: {
           files: {
-              'src/test.js': 'src/coffee/test.coffee', // 1:1 compile
+              'src/offeetest.js': 'src/coffee/test.coffee', // 1:1 compile
               // 'path/to/another.js': ['path/to/sources/*.coffee', 'path/to/more/*.coffee'] // compile and concat into single file
           }
-      },
+      },*/
       glob_to_multiple: {
           expand: true,
           flatten: false,
@@ -161,7 +161,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
 
   // Default task.
-  grunt.registerTask('default', ['coffee', 'clean', 'jshint', 'karma:unit', 
+  grunt.registerTask('default', ['clean', 'coffee', 'jshint', 'karma:unit', 
     /*'mochaTest',*/ /*'qunit', */'concat', 'uglify', 'copy', 'bowercopy', 'processhtml']);
 
 };
