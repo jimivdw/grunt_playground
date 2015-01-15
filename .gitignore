@@ -3,4 +3,5 @@ node_modules/
 dist/
 results.txt
 coverage/
+src/compiled
 
