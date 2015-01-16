@@ -4,6 +4,9 @@
     app.controller('AuthCtrl', ['$scope', 'LogService', '$rootScope',
         function($scope, LogService, $rootScope) {
             var vm = this;
+            vm.loggedIn = false;
+            vm.user = vm.user || {};
+            vm.user.name = 'axioma';
             vm.register = function(user) {
                 vm.registerUser = user;
                 LogService.log('info', 'register:' + JSON.stringify(user));
@@ -14,6 +17,7 @@
                 $rootScope.$broadcast('LOGIN_EVENT', {
                     'user': vm.loginUser
                 });
+                vm.loggedIn = true;
             };
             vm.logout = function(user) {
                 LogService.log('info', 'logout:' + JSON.stringify(user));
@@ -21,7 +25,7 @@
                     'user': vm.loginUser
                 });
                 vm.loginUser = null;
-
+                vm.loggedIn = false;
             };
 
         }

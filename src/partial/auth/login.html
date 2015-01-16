@@ -2,18 +2,18 @@
     <form class="form-inline">
         <div class="form-group">
             <label class="sr-only" for="userName">User name</label>
-            <input type="text" class="form-control" id="userName" placeholder="Enter user name" ng-model="user.name">
+            <input type="text" class="form-control" id="userName" placeholder="Enter user name" ng-model="auth.user.name">
         </div>
         <div class="form-group">
             <label class="sr-only" for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter password" ng-model="user.password">
+            <input type="password" class="form-control" id="password" placeholder="Enter password" ng-model="auth.user.password">
         </div>
         <div class="checkbox">
             <label>
                 <input type="checkbox"> Remember me
             </label>
         </div>
-        <button type="submit" class="btn btn-info" ng-click="auth.login(user)">Login</button>
-        <button type="submit" class="btn btn-info" ng-click="auth.logout(user)">Logout</button>
+        <button type="submit" class="btn btn-info" ng-click="auth.login(auth.user)" ng-hide="auth.loggedIn">Login</button>
+        <button type="submit" class="btn btn-danger" ng-click="auth.logout(auth.user)" ng-show="auth.loggedIn">Logout</button>
     </form>
 </div>
