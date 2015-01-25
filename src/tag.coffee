@@ -13,4 +13,4 @@ angular.module 'myapp', []
 			"Param: #{param}"
  
 		accessFieldFromMethod: ->
-			"Path: #{@$location.absUrl()}" 
+			"Path: #{@$location.absUrl()}" 		
