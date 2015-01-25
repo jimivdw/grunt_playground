@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="tag.js"></script>
+</head>
+
+<body ng-controller="DemoController as demo">
+    <p>{{demo.field}}</p>
+
+    <p>{{demo.method()}}</p>
+
+    <p>{{demo.methodWithParam('param1')}}</p>
+
+    <p>{{demo.accessFieldFromMethod()}}</p>
+
+    <input ng-model="demo.name"/>
+    <p>{{demo.name}}</p>
+
+</body>
+
+</html>
