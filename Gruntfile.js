@@ -100,7 +100,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    clean: ['dist', 'src/compiled'],
+    clean: ['dist', 'src/compiled', 'src/tag.js'],
     mochaTest: {
       test: {
         options: {
