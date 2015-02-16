@@ -12,7 +12,6 @@
             })
             .state('login', {
                 url: "/login",
-                // template: "<ul ng-repeat=\"item in items track by $index\"><span style=\"color:brown;\">{{$index}}: {{item}}</span></ul>",
                 templateUrl: "partial/auth/login.html",
                 controller: ['$scope', function($scope) { // jshint ignore: line
                     // $scope.items = ["A", "List", "Of", "Items"];
