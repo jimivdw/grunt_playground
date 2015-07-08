@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['src/compiled/test.js', 'src/compiled/demo/demo.js', 'src/service/service.js', 'src/controller/controller.js', 'src/directive/directive.js',
-              'src/**/*.js'],
+          'src/**/*.js'],
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
         files: '<%= jshint.lib_test.src %>',
         tasks: ['jshint:lib_test', 'qunit']
       }
-    }, 
+    },
     bowercopy: {
       options: {
         srcPrefix: 'bower_components'
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
     processhtml: {
       options: {
 
-      }, 
+      },
       dist: {
         files: {
           'dist/index.html': ['src/index.html']
@@ -121,28 +121,63 @@ module.exports = function(grunt) {
       },
     },
     serve: {
-        options: {
-            port: 9000,
-            base: 'src/'
-        }
+      options: {
+        port: 9000,
+        base: 'src/'
+      }
     },
     coffee: {
       /*compile: {
-          files: {
-              'src/offeetest.js': 'src/coffee/test.coffee', // 1:1 compile
-              // 'path/to/another.js': ['path/to/sources/*.coffee', 'path/to/more/*.coffee'] // compile and concat into single file
-          }
-      },*/
+       files: {
+       'src/offeetest.js': 'src/coffee/test.coffee', // 1:1 compile
+       // 'path/to/another.js': ['path/to/sources/*.coffee', 'path/to/more/*.coffee'] // compile and concat into single file
+       }
+       },*/
       glob_to_multiple: {
-          expand: true,
-          flatten: false,
-          cwd: 'src/coffee',
-          src: ['**/*.coffee'],
-          dest: 'src/compiled/',
-          ext: '.js'
+        expand: true,
+        flatten: false,
+        cwd: 'src/coffee',
+        src: ['**/*.coffee'],
+        dest: 'src/compiled/',
+        ext: '.js'
+      }
+    },
+    mutationTest: {
+      options: {
+        karma: {
+          configFile: 'test/config/karma.conf.js'
+        },
+        reporters: {
+          html: {
+            dir: 'reports/mutation-test-html'
+          },
+          text: {
+            dir: 'reports/mutation-test-text'
+          }
+        }
+      },
+      all: {
+        options: {
+          code: [
+            'bower_components/angular/angular.js',
+            'node_modules/angular-mocks/angular-mocks.js',
+            'src/service/service.js',
+            'src/service/**/*Service.js',
+            'src/controller/controller.js',
+            'src/controller/**/*Ctrl.js',
+            'src/directive/directive.js',
+            'src/directive/**/*.js',
+            'src/app.js'
+          ],
+          specs: 'test/unit/**/*Test.js',
+          mutate: [
+            'src/service/**/*Service.js',
+            'src/controller/**/*Ctrl.js',
+            'src/directive/**/*.js'
+          ]
+        }
       }
     }
-
   });
 
   // These plugins provide necessary tasks.
@@ -159,9 +194,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-serve');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-mutation-testing');
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'coffee', 'jshint', 'karma:unit', 
+  grunt.registerTask('default', ['clean', 'coffee', 'jshint', 'karma:unit',
     /*'mochaTest',*/ /*'qunit', */'concat', 'uglify', 'copy', 'bowercopy', 'processhtml']);
 
 };
